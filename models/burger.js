@@ -7,21 +7,16 @@ let burger = {
             });
           },
 
-    // selectAll: function () {
-    //     orm.selectAll(res => {
-    //         console.log(res)
-    //     })
-    // },
-    // insertOne: function (burger, values) {
-    //     orm.insertOne(burger, values, res => {
-    //         console.log(res)
-    //     })
-    // },
-    // updateOne: function (column, id) {
-    //     orm.updateOne(column, id, res =>{
-    //         console.log(res)
-    //     })
-    // }
+    insertOne: function (cols, vals, callback) {
+        orm.insertOne("burgers", cols, vals, callback, function(res) {
+            callback(res)
+        })
+    },
+    updateOne: function (objColsVals, condition, callback) {
+        orm.updateOne("burgers", objColsVals, condition, function(res){
+            callback(res)
+        })
+    }
 };
 
 module.exports = burger;
