@@ -1,14 +1,14 @@
-
 <div class="jumbotron">
 <h1 class="title text-center">Eat-Da-Burger!</h1>
+
 </div>
 <div class="container">
     <div class="row">
-        <div class="col" id="burgers-list">
+        <div class="col">
             <h2 class="burger-name text-center">Burgers Available</h2>
             {{#each burgers}}
             {{#unless this.devoured}}
-            <div class="available-burgers">
+            <div class="container">
                 <form action="/burgers/{{this.id}}?_method=PUT" method="POST" class="update-button">
                     {{this.burger_name}}
                     <button type="submit" class="btn btn-default" id="burger-ready">DEVOUR IT</button>
@@ -17,11 +17,11 @@
             {{/unless}}
             {{/each}}
         </div>        </div>
-        <div class="col" id="list-devoured">
-            <h2 class="burger-title text-center">Burgers Devoured</h2>
+        <div class="col" id="">
+            <h2 class="">Burgers Devoured</h2>
             {{#each burgers}}
             {{#if this.devoured}}
-            <div class="devoured-burgers">
+            <div class="">
                 {{this.burger_name}}
             </div>
             {{/if}}
